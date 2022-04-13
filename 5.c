@@ -63,7 +63,7 @@ int Decoder(int b) {
 
 int main() {
 	int e = 17;
-	int result = Coder(2);
+	int result = Coder(3);
 	int result_2 = Channel(result, e);
 	int result_3 = Decoder(result_2);
 	if (result != -1) {
