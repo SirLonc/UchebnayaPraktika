@@ -18,7 +18,7 @@ int weight(int num) {
 void print_num(int a) {
 	for (int i = 0; i < 5; i++) {
 		printf("%d", a & 1);
-		a >= 1;
+		a >>= 1;
 	}
 }
 
