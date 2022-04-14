@@ -61,12 +61,19 @@ int Decoder(int b) {
 }
 
 
-int main() {
+int main()
+{
 	int e = 17;
+	int errors[5] = { 0 };
+	int num = 0;
+
+
+
 	int result = Coder(3);
 	int result_2 = Channel(result, e);
 	int result_3 = Decoder(result_2);
-	if (result != -1) {
+	if (result != -1)
+	{
 		print_num(result);
 		printf("\n");
 		print_num(e);
@@ -77,5 +84,19 @@ int main() {
 	}
 	else
 		printf("ERROR");
+	if ((weight(e) == 1) && (result_3 == num))
+		errors[0]++;
+	else if ((weight(e) == 2) && (result_3 == num))
+		errors[1]++;
+	else if ((weight(e) == 3) && (result_3 == num))
+		errors[2]++;
+	else if ((weight(e) == 4) && (result_3 == num))
+		errors[3]++;
+	else if ((weight(e) == 5) && (result_3 == num))
+		errors[4]++;
+	for (int k = 0; k < 5; k++) {
+		printf("\n %d errors = %d", k + 1, errors[k]);
+	}
+
 	return 0;
 }
